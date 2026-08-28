@@ -36,9 +36,20 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap:8px;
+            gap:12px;
         }
-        .logo {
+        .logo-wrap {
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+        .logo-img {
+            height:44px;
+            width:auto;
+            /* 圖片載入失敗容錯：就算圖片找不到也不會撐大版面 */
+            min-height:0;
+        }
+        .logo-text {
             font-size: 19px;
             font-weight: bold;
             color: #f2bc4f;
@@ -199,8 +210,11 @@
         }
 
         @media(max-width:768px){
-            .logo{
-                font-size:16px;
+            .logo-img {
+                height:34px;
+            }
+            .logo-text{
+                font-size:15px;
             }
             .nav-links a {
                 margin-left:6px;
@@ -215,7 +229,11 @@
 <body>
 <nav>
     <div class="nav-wrap">
-        <div class="logo">Chance Scaffolding｜承碩棚架工程有限公司</div>
+        <div class="logo-wrap">
+            <!-- 把 src 替換成你的真實logo路徑，本地使用就把圖片放到html同一資料夾 -->
+            <img class="logo-img" src="logo.png" alt="Chance Scaffolding 承碩棚架工程有限公司">
+            <div class="logo-text">Chance Scaffolding｜承碩棚架工程有限公司</div>
+        </div>
         <div class="nav-links">
             <a href="#home">首頁</a>
             <a href="#about">關於我們</a>
@@ -315,7 +333,6 @@
 
                 <input type="submit" class="submit-btn btn" value="提交免費報價">
             </form>
-            <!-- 提交成功後顯示，純a標籤跳WhatsApp，不受JS彈窗攔截 -->
             <div class="submit-success-block" id="successBlock">
                 <h3>✅ 報價資料已提交</h3>
                 <p>請點擊下方按鈕直接打開WhatsApp完成查詢</p>
@@ -360,7 +377,7 @@
             <p>🏢 公司名稱：Chance Scaffolding 承碩棚架工程有限公司</p>
             <p>🌐 網站：<a href="https://chancehkscaffolding.com">chancehkscaffolding.com</a></p>
             <p>📱 WhatsApp：<a href="https://wa.me/85268255552" target="_blank">+852 6825 5552 點擊直接對話</a></p>
-            <p>💬 微信 ID：sitgai</p>
+            <p>💬微信 ID：sitgai</p>
             <p>📧 電郵：<a href="mailto:chance@chancehkscaffolding.com">chance@chancehkscaffolding.com</a></p>
             <p>📍 服務地區：全香港</p>
             <p>📌 歡迎業主、師傅、工程公司查詢報價及長期合作。</p>
